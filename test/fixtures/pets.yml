@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  photo: 
+  name: MyString
+  specie: MyString
+  breed: MyString
+  municipal_record: MyString
+  vaccines: MyString
+  sex: false
+  size: 1
+  age: 1
+
+two:
+  photo: 
+  name: MyString
+  specie: MyString
+  breed: MyString
+  municipal_record: MyString
+  vaccines: MyString
+  sex: false
+  size: 1
+  age: 1
