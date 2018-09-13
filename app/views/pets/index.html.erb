@@ -34,7 +34,11 @@
         <td><%= pet.age %></td>
         <td><%= link_to 'Show', pet %></td>
         <td><%= link_to 'Edit', edit_pet_path(pet) %></td>
-        <td><%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <% if can?(:destroy, :pet) %>
+          <%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%end%>
+        </td>
       </tr>
     <% end %>
   </tbody>
