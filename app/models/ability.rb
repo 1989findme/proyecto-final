@@ -5,7 +5,11 @@ class Ability
     # Define abilities for the passed in user here. For example:
     #
     user ||= User.new # guest user (not logged in)
-    can :destroy, Pet, user_id: user.id
+    # if user.admin?
+    #   can :manage, :all
+    # else
+      can :read, Pet
+      can :destroy, Pet, user_id: user.id
     #   if user.admin?
     #     can :manage, :all
     #   else
@@ -31,3 +35,4 @@ class Ability
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
   end
 end
+# end

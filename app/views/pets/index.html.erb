@@ -21,9 +21,7 @@
   <tbody>
     <% @pets.each do |pet| %>
       <tr>
-        <td><%= image_tag pet.photo[0].url(:resized) %></td>
-        <td><%= image_tag pet.photo[1].url(:resized) %></td>
-        <td><%= image_tag pet.photo[2].url(:resized) %></td>
+
         <td><%= pet.name %></td>
         <td><%= pet.specie %></td>
         <td><%= pet.breed %></td>
@@ -35,7 +33,7 @@
         <td><%= link_to 'Show', pet %></td>
         <td><%= link_to 'Edit', edit_pet_path(pet) %></td>
         <td>
-          <% if can?(:destroy, :pet) %>
+          <% if can?(:destroy, pet) %>
           <%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %>
           <%end%>
         </td>
