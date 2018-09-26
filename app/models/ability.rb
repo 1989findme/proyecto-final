@@ -8,7 +8,8 @@ class Ability
     # if user.admin?
     #   can :manage, :all
     # else
-      can :read, Pet
+
+      can [:read, :create], Pet
       can :destroy, Pet, user_id: user.id
     #   if user.admin?
     #     can :manage, :all
