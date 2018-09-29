@@ -10,11 +10,15 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= modernizr-1.5.min
-//= jquery
-//= jquery.easing-sooper
-//= jquery.sooperfish
-//= require rails-ujs
-//= require activestorage
+//= require jquery-2.2.3.min
+//= require SmoothScroll.min
+//= require jarallax
+//= require easyResponsiveTabs
+//= require typed
+//= require jquery.flexslider
+//= require move-top
+//= require easing
+//= require bootstrap
+//= require lsb.min
 //= require turbolinks
 //= require_tree .

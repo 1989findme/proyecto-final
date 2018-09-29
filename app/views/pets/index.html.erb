@@ -1,48 +1,43 @@
-<p id="notice"><%= notice %></p>
+<!-- welcome -->
+<div class="welcome">
+  <div class="container">
+    <div class="col-md-6 w3ls_welcome_right">
+      <div class="flexslider">
+        <ul class="slides">
+          <li>
+            <div class="agileits_w3layouts_welcome_grid">
+              <img src="http://www.cvgalapago.es/blog/wp-content/uploads/2016/11/img_la_alimentacion_del_erizo_africano_20306_600-300x300.jpg" alt=" " class="img-responsive" />
+            </div>
+          </li>
+          <li>
+            <div class="agileits_w3layouts_welcome_grid">
+              <img src="http://www.rodentia.es/blog/wp-content/uploads/2015/09/Retar-a-un-Perro-300x300.jpg" alt=" " class="img-responsive" />
+            </div>
+          </li>
+          <li>
+            <div class="agileits_w3layouts_welcome_grid">
+              <img src="https://mazovacy.files.wordpress.com/2013/10/lil-bub-2-300x300.jpg" alt=" " class="img-responsive" />
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
 
-<h1>Pets</h1>
+    <div class="col-md-6 w3ls_welcome_left">
+      <div class="w3ls_welcome_right1">
+        <h3 class="agileits-title">About Us</h3>
+        <h6>Lorem ipsum dolor <span> Consectetur </span> sit amet adipisicing elit. </h6>
+        <p>Quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.</p>
+        <div class="w3l_more">
+          <a href="#" class="button button--nina" data-text="Learn more" data-toggle="modal" data-target="#myModal">
+            <span>L</span><span>e</span><span>a</span><span>n</span> <span>m</span><span>o</span><span>r</span><span>e</span>
+          </a>
+        </div>
+      </div>
+      <div class="clearfix"> </div>
+    </div>
+    <div class="clearfix"> </div>
+  </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Photo</th>
-      <th>Name</th>
-      <th>Specie</th>
-      <th>Breed</th>
-      <th>Municipal record</th>
-      <th>Vaccines</th>
-      <th>Sex</th>
-      <th>Size</th>
-      <th>Age</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @pets.each do |pet| %>
-      <tr>
-
-
-        <td><%= pet.name %></td>
-        <td><%= pet.specie %></td>
-        <td><%= pet.breed %></td>
-        <td><%= pet.municipal_record %></td>
-        <td><%= pet.vaccines %></td>
-        <td><%= pet.sex %></td>
-        <td><%= pet.size %></td>
-        <td><%= pet.age %></td>
-        <td><%= link_to 'Show', pet %></td>
-        <td><%= link_to 'Edit', edit_pet_path(pet) %></td>
-        <td>
-          <% if can?(:destroy, pet) %>
-          <%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <%end%>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Pet', new_pet_path %>
+<!-- //welcome -->
