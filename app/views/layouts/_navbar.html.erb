@@ -11,8 +11,8 @@
     <!-- top-nav -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav cl-effect-16">
-        <li><a href="index.html" class="active" data-hover="Home">Home</a></li>
-        <li><a href="about.html" data-hover="About">About</a></li>
+        <li><a href="index.html" class="active" data-hover="Home">Inicio</a></li>
+        <li><a href="about.html" data-hover="About">Haz Match</a></li>
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -24,7 +24,6 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <% if user_signed_in?%>
-          kuashydasydiaysd
             <%= link_to "Salir", destroy_user_session_path, method: :delete %>
             <% else %>
             <a class="dropdown-item" href="<%= new_user_session_path%>">Ingreso</a>
@@ -34,8 +33,8 @@
         </li>
 
       </li>
-      <li><a href="gallery.html" data-hover="Gallery">Gallery</a></li>
-      <li><a href="contact.html" data-hover="Contact">Contact</a></li>
+      <li><a href="gallery.html" data-hover="Gallery">Animalove</a></li>
+      <li><a href="contact.html" data-hover="Contact">Contacto</a></li>
     </ul>
     <div class="clearfix"> </div>
   </div>

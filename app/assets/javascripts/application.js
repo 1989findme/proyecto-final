@@ -21,4 +21,5 @@
 //= require bootstrap
 //= require lsb.min
 //= require turbolinks
+//= require rails-ujs
 //= require_tree .
