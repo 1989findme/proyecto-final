@@ -8,7 +8,18 @@
 
 Pet.delete_all
 12.times do |i|
+User.create(
+  email: Faker::Internet,
+  password: "123456xx",
+  name: Faker::Name.name_with_middle,
+  address: Faker::Address.street_address,
+  phone: Faker::PhoneNumber.cell_phone,
+  rol: "client")
+end
+
+12.times do |i|
   Pet.create(
+
     photo:[File.open("/home/emanuel/Desktop/gato.jpg"),File.open("/home/emanuel/Desktop/gato(2).jpg"),File.open("/home/emanuel/Desktop/gato(3).jpg")],
     name: Faker::Dog.name,
     breed: Faker::Dog.breed,
@@ -16,4 +27,7 @@ Pet.delete_all
     sex: Faker::Dog.gender,
     size: Faker::Dog.size,
   )
+
+  photos.each do |photo|
+    end
 end
