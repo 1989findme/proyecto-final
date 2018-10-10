@@ -12,9 +12,10 @@ gem 'faker', group: :development
 gem 'cancancan', '~> 2.0'
 gem 'geocoder'
 gem 'omniauth-facebook'
+gem 'sqlite3', group: :development
 
 # Use postgresql as the database for Active Record
-gem 'pg', '>= 0.18', '< 2.0'
+gem 'pg', '>= 0.18', '< 2.0', group: :production
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
