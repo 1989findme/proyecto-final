@@ -11,6 +11,7 @@ gem 'devise', git: 'https://github.com/plataformatec/devise.git'
 gem 'faker', group: :development
 gem 'cancancan', '~> 2.0'
 gem 'geocoder'
+gem 'omniauth-facebook'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
