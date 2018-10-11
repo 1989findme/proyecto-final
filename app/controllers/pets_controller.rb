@@ -12,6 +12,10 @@ class PetsController < ApplicationController
     @pet = Pet.new
   end
 
+  def search
+    @pets = Pet.first(10)
+  end
+
   # GET /pets/1/edit
   def edit
   end

@@ -7,9 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Pet.delete_all
+User.delete_all
 12.times do |i|
-User.create(
-  email: Faker::Internet,
+User.create!(
+  email: Faker::Internet.email,
   password: "123456xx",
   name: Faker::Name.name_with_middle,
   address: Faker::Address.street_address,
@@ -18,16 +19,14 @@ User.create(
 end
 
 12.times do |i|
-  Pet.create(
-
-    photo:[File.open("/home/emanuel/Desktop/gato.jpg"),File.open("/home/emanuel/Desktop/gato(2).jpg"),File.open("/home/emanuel/Desktop/gato(3).jpg")],
+  Pet.create!(
+    user: User.order("RANDOM()").first,
+    photo:[File.open("/home/emanuel/Desktop/gato.jpg"),File.open("/home/emanuel/Desktop/gato(3).jpg")],
     name: Faker::Dog.name,
     breed: Faker::Dog.breed,
-    age: Faker::Dog.age,
-    sex: Faker::Dog.gender,
-    size: Faker::Dog.size,
+    age: Faker::Number.between(1, 15),
+    sex: [0,1].sample,
+    size: [0,1,2,3,4].sample,
   )
 
-  photos.each do |photo|
-    end
 end

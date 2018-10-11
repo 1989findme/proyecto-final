@@ -8,7 +8,7 @@ class Ability
     if user.admin?
       can :manage, :all
     elsif user.client?
-      can [:read, :create], Pet
+      can [:read, :create, :search], Pet
       can :destroy, Pet, user_id: user.id
     elsif user.guest?
       can :read, Pet
