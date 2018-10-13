@@ -2,6 +2,21 @@
 
 <h1>Pets</h1>
 
+<% @pets.each do |pet| %>
+<!-- <% pet.photo.each do |image| %>
+<td><%= image_tag image.url %><td>
+<% end %> -->
+
+  <td><%= image_tag pet.photo.sample.url %></td>
+  <%= form_for(@interaction) do |form|  %>
+    <%= form.submit %>
+    <div class="field">
+      <%= form.label :user_two_id %>
+      <%= form.text_field :user_two_id, value: pet.user.id  %>
+    </div>
+  <% end %>
+<% end %>
+
 <table>
   <thead>
     <tr>
@@ -20,36 +35,36 @@
 
   <tbody>
     <% @pets.each do |pet| %>
-      <tr>
+    <tr>
 
-<!-- <% pet.photo.each do |image| %>
-<td><%= image_tag image.url %><td>
-        <% end %> -->
+      <!-- <% pet.photo.each do |image| %>
+      <td><%= image_tag image.url %><td>
+      <% end %> -->
 
-        <td><%= image_tag pet.photo.sample.url %></td>
+      <td><%= image_tag pet.photo.sample.url %></td>
 
-<td><%= pet.name %></td>
-        <td><%= pet.specie %></td>
-        <td><%= pet.breed %></td>
-        <td><%= pet.municipal_record %></td>
-        <td><%= pet.vaccines %></td>
+      <td><%= pet.name %></td>
+      <td><%= pet.specie %></td>
+      <td><%= pet.breed %></td>
+      <td><%= pet.municipal_record %></td>
+      <td><%= pet.vaccines %></td>
 
-        <%if pet.sex == false %>
-          <td>masculino</td>
-        <%else%>
-          <td>femenino</td>
-          <% end %>
+      <%if pet.sex == false %>
+      <td>masculino</td>
+      <%else%>
+      <td>femenino</td>
+      <% end %>
 
-        <td><%= pet.size %></td>
-        <td><%= pet.age %></td>
-        <td><%= link_to 'Show', pet %></td>
-        <td><%= link_to 'Edit', edit_pet_path(pet) %></td>
-        <td>
-          <% if can?(:destroy, pet) %>
-          <%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <%end%>
-        </td>
-      </tr>
+      <td><%= pet.size %></td>
+      <td><%= pet.age %></td>
+      <td><%= link_to 'Show', pet %></td>
+      <td><%= link_to 'Edit', edit_pet_path(pet) %></td>
+      <td>
+        <% if can?(:destroy, pet) %>
+        <%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%end%>
+      </td>
+    </tr>
     <% end %>
   </tbody>
 </table>

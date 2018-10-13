@@ -8,8 +8,7 @@ class Interaction < ApplicationRecord
     sender = user_one
     reciever = user_two
     if Interaction.where(user_one: reciever,
-                         user_two: sender,
-                         like: true)
+                         user_two: sender)
                   .any?
       Match.create(user_one: sender, user_two: receiver)
     end

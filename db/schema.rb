@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_10_025151) do
+ActiveRecord::Schema.define(version: 2018_10_12_233342) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 2018_10_10_025151) do
   create_table "interactions", force: :cascade do |t|
     t.integer "user_one_id"
     t.integer "user_two_id"
-    t.boolean "like"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
