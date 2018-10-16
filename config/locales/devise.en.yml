@@ -29,7 +29,7 @@ en:
         subject: "Password Changed"
     omniauth_callbacks:
       failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
-      success: "Successfully authenticated from %{kind} account."
+      success: "Haz Iniciado sesión con %{kind}."
     passwords:
       no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
       send_instructions: "You will receive an email with instructions on how to reset your password in a few minutes."
@@ -46,7 +46,7 @@ en:
       updated: "Your account has been updated successfully."
     sessions:
       signed_in: "Bienvenido Usuario"
-      signed_out: "Signed out successfully."
+      signed_out: "Haz Cerrado sesión."
       already_signed_out: "Signed out successfully."
     unlocks:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."

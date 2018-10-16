@@ -9,6 +9,7 @@ gem 'mini_magick'
 gem 'rails', '~> 5.2.0'
 gem 'devise', git: 'https://github.com/plataformatec/devise.git'
 gem 'faker', group: :development
+gem 'activeadmin'
 gem 'cancancan', '~> 2.0'
 gem 'geocoder'
 gem 'omniauth-facebook'
