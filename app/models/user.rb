@@ -1,6 +1,11 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+
+  geocoded_by :address
+  after_validation :geocode
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
@@ -14,8 +19,8 @@ class User < ApplicationRecord
             foreign_key: :user_two_id
 
   has_many :matches,
-          class_name: 'match',
-          foreign_key: :user_one_id
+            class_name: 'match',
+            foreign_key: :user_one_id
 
   has_many :pets
 

@@ -15,7 +15,17 @@
 
   <div class="field">
     <%= f.label :address %><br />
-    <%= f.text_field :address, autocomplete: "address" %>
+    <div class="row">
+      <div class="col-md-10">
+        <%= f.text_field :address,
+        class: 'form-control' %>
+      </div>
+      <div class="col-md-2">
+        <%= link_to "#",class: "btn btn-primary", id:"find-address" do %>
+        <i class= "fa fa-map-marker"> </i>
+        <% end %>
+      </div>
+    </div>
   </div>
 
   <div class="field">
@@ -42,3 +52,39 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+<script>
+$("#find-address").click(function(event)){
+  $(this).html('<i class = "fa fa-spinner fa-spin"> </i>')
+  event.preventDefault();
+
+   if (navigator.geolocation) {
+   navigator.geolocation.getCurrentPosition(getAddress);
+   } else {
+   x.innerHTML = "Geolocation is not supported by this browser.";
+   }
+  }
+  function getAddress(position) {
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+      $.ajax({
+      url: '/geocoder/findaddress',
+      type: 'GET',
+      dataType: 'script',
+      data: {latitude: latitude, longitude: longitude}
+      })
+
+      .done(function(){
+        console.log("success");
+      })
+
+      .fail(function(){
+        console.log("error");
+      })
+
+      .always(function(){
+      $("#find-address").html('<i class = "fa fa-map-marker"> </i>');
+      });
+alert(position.coords.latitude);
+}
+</script>
