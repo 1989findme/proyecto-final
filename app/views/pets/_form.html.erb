@@ -23,37 +23,38 @@
 
   <div class="field">
     <%= form.label :specie %>
-    <%= form.text_field :specie %>
-  </div>
-
-  <div class="field">
-    <%= form.label :breed %>
-    <%= form.text_field :breed %>
+    <%= form.select :specie, [["Perro"], ["Gato"],["Erizo"], ["Conejo"],
+    ["Ave"], ["Serpiente"],["Iguana"],["Roedor"],["Hurón"]] %>
   </div>
 
   <div class="field">
     <%= form.label :municipal_record %>
-    <%= form.text_field :municipal_record %>
+    <%= form.check_box :municipal_record %>
   </div>
 
   <div class="field">
     <%= form.label :vaccines %>
-    <%= form.text_field :vaccines %>
+    <%= form.check_box :vaccines %>
   </div>
 
   <div class="field">
     <%= form.label :sex %>
-    <%= form.check_box :sex %>
+    <%= form.select :sex, [["M", 0],["F", 1]] %>
   </div>
 
   <div class="field">
     <%= form.label :size %>
-    <%= form.number_field :size %>
+    <%= form.select :size, Pet.sizes.keys %>
   </div>
 
   <div class="field">
     <%= form.label :age %>
-    <%= form.number_field :age %>
+    <%= form.select :age, Pet.ages.keys %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
   </div>
 
   <div class="actions">

@@ -13,7 +13,7 @@ class PetsController < ApplicationController
   end
 
   def search
-    @pets = Pet.first(10)
+    @pets = Pet.all
     @interaction = Interaction.new
   end
 

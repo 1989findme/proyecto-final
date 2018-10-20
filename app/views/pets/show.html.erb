@@ -22,7 +22,11 @@
 
 <p>
   <strong>Municipal record:</strong>
-  <%= @pet.municipal_record %>
+  <% if @pet.municipal_record == true %>
+  si
+  <% else %>
+  no
+  <% end %>
 </p>
 
 <p>
@@ -32,7 +36,11 @@
 
 <p>
   <strong>Sex:</strong>
-  <%= @pet.sex %>
+  <% if @pet.sex == true %>
+  Femenino
+  <% else %>
+  Masculino
+  <% end %>
 </p>
 
 <p>
