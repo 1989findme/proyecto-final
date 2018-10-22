@@ -23,8 +23,8 @@ end
     user: User.order("RANDOM()").first,
     photo:[File.open("/home/emanuel/Desktop/gato.jpg"),File.open("/home/emanuel/Desktop/gato(3).jpg")],
     name: Faker::Dog.name,
-    breed: Faker::Dog.breed,
-    age: Faker::Number.between(1, 15),
+    Specie: [Felino],
+    age: [0,1,2,3,4,5,6,7].sample,
     sex: [0,1].sample,
     size: [0,1,2,3,4].sample,
   )

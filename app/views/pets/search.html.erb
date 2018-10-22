@@ -7,14 +7,14 @@
 <td><%= image_tag image.url %><td>
 <% end %> -->
 
-  <td><%= image_tag pet.photo.sample.url %></td>
-  <%= form_for(@interaction) do |form|  %>
-    <%= form.submit %>
-    <div class="field">
-      <%= form.label :user_two_id %>
-      <%= form.text_field :user_two_id, value: pet.user.id  %>
-    </div>
-  <% end %>
+<td><%= image_tag pet.photo.sample.url %></td>
+<%= form_for(@interaction) do |form|  %>
+<%= form.submit %>
+<div class="field">
+  <%= form.label :user_two_id %>
+  <%= form.text_field :user_two_id, value: pet.user.id  %>
+</div>
+<% end %>
 <% end %>
 
 <table>
@@ -46,8 +46,19 @@
       <td><%= pet.name %></td>
       <td><%= pet.specie %></td>
       <td><%= pet.breed %></td>
-      <td><%= pet.municipal_record %></td>
+
+      <%if pet.municipal_record == false %>
+      <td>Sí</td>
+      <%else%>
+      <td>No</td>
+      <% end %>
       <td><%= pet.vaccines %></td>
+
+      <%if pet.vaccines == false %>
+      <td>Sí</td>
+      <%else%>
+      <td>No</td>
+      <% end %>
 
       <%if pet.sex == false %>
       <td>masculino</td>
@@ -72,3 +83,52 @@
 <br>
 
 <%= link_to 'New Pet', new_pet_path %>
+
+<div class="row">
+  <% @pets.each_slice(4) do |row| %>
+  <% row.each do |pet| %>
+  <div class= "col">
+    <div class ="card">
+      <%= image_tag pet.photo.sample.url, class:'card-img-top', size: '200x200' %>
+      <div class="body">
+      <h4><%="Nombre:"%><%= pet.name %></h4>
+        <h5><%="Tipo de Mascota: "%><%= pet.specie %></h5>
+        <%="Permiso Municipal:  "%><%if pet.municipal_record == false %>
+        <td>Sí</td>
+        <%else%>
+        <td>No</td>
+        <% end %></br>
+        <%="Sexo:  "%>  <%if pet.sex == false %>
+        <td>masculino</td>
+        <%else%>
+        <td>femenino</td>
+        <% end %></br>
+        <%="Posee vacunas al día:  "%><%if pet.vaccines == false %>
+        <td>Sí</td>
+        <%else%>
+        <td>No</td>
+        <% end %></br>
+        <%="Edad: "%><%= pet.age %></br>
+        <%="Tamaño : "%><%= pet.size %></br>
+        <%="Descripción: "%><%= pet.description %>
+
+        <%= form_for(@interaction) do |form|  %>
+        <%= form.submit %>
+        <div class="field">
+          <%= form.label :user_two_id %>
+          <%= form.text_field :user_two_id, value: pet.user.id  %>
+          <%= link_to 'Show', pet %>
+          <%= link_to 'Edit', edit_pet_path(pet) %>
+          <% if can?(:destroy, pet) %>
+          <%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%end%>
+        </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+  <% end %>
+  <div class = "w-100" style="margin-top:20px"> </div>
+  <% end %>
+</div>

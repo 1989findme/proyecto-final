@@ -31,7 +31,11 @@
 
 <p>
   <strong>Vaccines:</strong>
-  <%= @pet.vaccines %>
+  <% if @pet.vaccines == true %>
+  si
+  <% else %>
+  no
+  <% end %>
 </p>
 
 <p>
