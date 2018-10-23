@@ -29,7 +29,7 @@ class PetsController < ApplicationController
 
     respond_to do |format|
       if @pet.save
-        format.html { redirect_to @pet, notice: 'Haz Eliminado a tu Mascota.' }
+        format.html { redirect_to @pet, notice: 'Has Registrado a tu Mascota.' }
         format.json { render :show, status: :created, location: @pet }
       else
         format.html { render :new }

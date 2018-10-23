@@ -1,27 +1,23 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
 
+</div>
 <p>
-  <strong>Photo:</strong>
+  <strong>Foto:</strong></br>
   <%= image_tag @pet.photo[0].url %>
 </p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nombre:</strong>
   <%= @pet.name %>
 </p>
 
 <p>
-  <strong>Specie:</strong>
+  <strong>Mascota:</strong>
   <%= @pet.specie %>
 </p>
 
 <p>
-  <strong>Breed:</strong>
-  <%= @pet.breed %>
-</p>
-
-<p>
-  <strong>Municipal record:</strong>
+  <strong>Permiso Municipal:</strong>
   <% if @pet.municipal_record == true %>
   si
   <% else %>
@@ -30,7 +26,7 @@
 </p>
 
 <p>
-  <strong>Vaccines:</strong>
+  <strong>Vacunas al día:</strong>
   <% if @pet.vaccines == true %>
   si
   <% else %>
@@ -39,7 +35,7 @@
 </p>
 
 <p>
-  <strong>Sex:</strong>
+  <strong>Sexo:</strong>
   <% if @pet.sex == true %>
   Femenino
   <% else %>
@@ -48,14 +44,15 @@
 </p>
 
 <p>
-  <strong>Size:</strong>
+  <strong>Tamaño:</strong>
   <%= @pet.size %>
 </p>
 
 <p>
-  <strong>Age:</strong>
+  <strong>Edad:</strong>
   <%= @pet.age %>
 </p>
+</div>
 
 <%= link_to 'Edit', edit_pet_path(@pet) %> |
 <%= link_to 'Back', pets_path %>
