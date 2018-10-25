@@ -1,85 +1,4 @@
-<h1>Pets</h1>
-
-<% @pets.each do |pet| %>
-<!-- <% pet.photo.each do |image| %>
-<td><%= image_tag image.url %><td>
-<% end %> -->
-
-<td><%= image_tag pet.photo.sample.url %></td>
-<%= form_for(@interaction) do |form|  %>
-<%= form.submit %>
-<div class="field">
-  <%= form.label :user_two_id %>
-  <%= form.text_field :user_two_id, value: pet.user.id  %>
-</div>
-<% end %>
-<% end %>
-
-<table>
-  <thead>
-    <tr>
-      <th>Photo</th>
-      <th>Nombre</th>
-      <th>Specie</th>
-      <th>Breed</th>
-      <th>Municipal record</th>
-      <th>Vaccines</th>
-      <th>Sex</th>
-      <th>Size</th>
-      <th>Age</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @pets.each do |pet| %>
-    <tr>
-
-      <!-- <% pet.photo.each do |image| %>
-      <td><%= image_tag image.url %><td>
-      <% end %> -->
-
-      <td><%= image_tag pet.photo.sample.url %></td>
-
-      <td><%= pet.name %></td>
-      <td><%= pet.specie %></td>
-      <td><%= pet.breed %></td>
-
-      <%if pet.municipal_record == false %>
-      <td>Sí</td>
-      <%else%>
-      <td>No</td>
-      <% end %>
-      <td><%= pet.vaccines %></td>
-
-      <%if pet.vaccines == false %>
-      <td>Sí</td>
-      <%else%>
-      <td>No</td>
-      <% end %>
-
-      <%if pet.sex == false %>
-      <td>masculino</td>
-      <%else%>
-      <td>femenino</td>
-      <% end %>
-
-      <td><%= pet.size %></td>
-      <td><%= pet.age %></td>
-      <td><%= link_to 'Show', pet %></td>
-      <td><%= link_to 'Edit', edit_pet_path(pet) %></td>
-      <td>
-        <% if can?(:destroy, pet) %>
-        <%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <%end%>
-      </td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
+<h1>Mascotas</h1>
 <%= link_to 'New Pet', new_pet_path %>
 
 <div class="row">
@@ -116,8 +35,8 @@
           <%= form.label :user_two_id %>
           <%= form.text_field :user_two_id, value: pet.user.id  %>
           <%= link_to 'Show', pet %>
-          <%= link_to 'Edit', edit_pet_path(pet) %>
           <% if can?(:destroy, pet) %>
+          <%= link_to 'Edit', edit_pet_path(pet) %>
           <%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %>
           <%end%>
         </div>

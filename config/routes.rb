@@ -10,6 +10,9 @@ Rails.application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks",
     registrations: 'users/registrations'
   }
+  resources :users do
+      get :show
+  end
 
   root to: 'pets#index'
   resources :interactions, only: :create

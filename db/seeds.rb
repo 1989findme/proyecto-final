@@ -7,7 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Pet.delete_all
-User.delete_all
 12.times do |i|
 User.create!(
   email: Faker::Internet.email,
@@ -23,8 +22,8 @@ end
     user: User.order("RANDOM()").first,
     photo:[File.open("/home/emanuel/Desktop/gato.jpg"),File.open("/home/emanuel/Desktop/gato(3).jpg")],
     name: Faker::Dog.name,
-    Specie: [Felino],
-    age: [0,1,2,3,4,5,6,7].sample,
+    breed: Faker::Dog.breed,
+    age: Faker::Number.between(0, 6),
     sex: [0,1].sample,
     size: [0,1,2,3,4].sample,
   )

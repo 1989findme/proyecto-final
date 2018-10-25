@@ -2,15 +2,17 @@ class Interaction < ApplicationRecord
   belongs_to :user_one, class_name: 'User'
   belongs_to :user_two, class_name: 'User'
 
-  before_save :check_match
+  after_save :check_match
 
   def check_match
-    sender = user_one
-    reciever = user_two
-    if Interaction.where(user_one: reciever,
-                         user_two: sender)
-                  .any?
-      Match.create(user_one: sender, user_two: receiver)
+    # if Interaction.where(user_one: self.user_one,
+    #                      user_two: self.user_two)
+    #               .any?
+    #   Match.create(user_one: self.user_one, user_two: self.user_two)
+    # end
+    interaction = Interaction.where(user_one: self.user_two, user_two: self.user_one)
+    unless interaction.empty?
+      Match.create(user_one_id: self.user_one.id, user_two_id: self.user_two.id)
     end
   end
 end
