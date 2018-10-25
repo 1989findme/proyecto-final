@@ -1,4 +1,5 @@
 ActiveAdmin.setup do |config|
+  config.authorization_adapter = ActiveAdmin::CanCanAdapter
   # == Site Title
   #
   # Set the title that is displayed on the main layout

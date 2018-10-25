@@ -4,7 +4,7 @@
 <div class="row">
   <% @pets.each_slice(4) do |row| %>
   <% row.each do |pet| %>
-  <div class= "col">
+  <div class= "col-md-3">
     <div class ="card">
       <%= image_tag pet.photo.sample.url, class:'card-img-top', size: '200x200' %>
       <div class="body">

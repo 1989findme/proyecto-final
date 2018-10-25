@@ -1,6 +1,8 @@
 class PetsController < ApplicationController
   # before_action :set_pet, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :search]
   load_and_authorize_resource
+
 
   # GET /pets
   # GET /pets.json

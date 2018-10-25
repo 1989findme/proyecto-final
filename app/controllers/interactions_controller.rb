@@ -1,4 +1,5 @@
 class InteractionsController < ApplicationController
+  before_action :authenticate_user!, only: [:create]
   load_and_authorize_resource
   #after_action :check_matches, only: [:create]
 
