@@ -1,7 +1,12 @@
+<div class="cambios">
+
 <h1>Mascotas</h1>
-<%= link_to 'New Pet', new_pet_path %>
+<%= link_to 'Registra a tu mascota', new_pet_path, class: "btn btn-primary" %>
 
 <div class="row">
+  <div class="container">
+
+  </div>
   <% @pets.each_slice(4) do |row| %>
   <% row.each do |pet| %>
   <div class= "col-md-3">
@@ -48,4 +53,6 @@
   <% end %>
   <div class = "w-100" style="margin-top:20px"> </div>
   <% end %>
+</div>
+</div>
 </div>

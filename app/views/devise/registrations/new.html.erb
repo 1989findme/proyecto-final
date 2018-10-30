@@ -1,10 +1,10 @@
-<h2>Sign up</h2>
+<h2>Registrate</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :nombre %><br />
     <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
   </div>
 
@@ -14,7 +14,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :address %><br />
+    <%= f.label :dirección %><br />
     <div class="row">
       <div class="col-md-10">
         <%= f.text_field :address,
@@ -29,7 +29,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :phone %><br />
+    <%= f.label :Teléfono %><br />
     <%= f.text_field :phone, autocomplete: "phone" %>
   </div>
 
@@ -47,7 +47,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Registrar" %>
   </div>
 <% end %>
 
