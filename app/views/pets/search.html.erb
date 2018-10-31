@@ -37,9 +37,9 @@
         <%= form_for(@interaction) do |form|  %>
         <%= form.submit %>
         <div class="field">
-          <%= form.label :user_two_id %>
+          <% form.label :user_two_id %>
           <%= form.text_field :user_two_id, value: pet.user.id  %>
-          <%= link_to 'Show', pet %>
+          <% link_to 'Show', pet %>
           <% if can?(:destroy, pet) %>
           <%= link_to 'Edit', edit_pet_path(pet) %>
           <%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %>
