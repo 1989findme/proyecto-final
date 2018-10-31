@@ -15,17 +15,17 @@
       <div class="body">
       <h4><%="Nombre:"%><%= pet.name %></h4>
         <h5><%="Tipo de Mascota: "%><%= pet.specie %></h5>
-        <%="Permiso Municipal:  "%><%if pet.municipal_record == false %>
+        <%="Permiso Municipal:  "%><%if pet.municipal_record == 'f' %>
         <td>Sí</td>
         <%else%>
         <td>No</td>
         <% end %></br>
-        <%="Sexo:  "%>  <%if pet.sex == false %>
+        <%="Sexo:  "%>  <%if pet.sex == 'f' %>
         <td>masculino</td>
         <%else%>
         <td>femenino</td>
         <% end %></br>
-        <%="Posee vacunas al día:  "%><%if pet.vaccines == false %>
+        <%="Posee vacunas al día:  "%><%if pet.vaccines == 'f' %>
         <td>Sí</td>
         <%else%>
         <td>No</td>
