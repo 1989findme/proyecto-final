@@ -23,7 +23,7 @@ class PetsTest < ApplicationSystemTestCase
     fill_in "Size", with: @pet.size
     fill_in "Specie", with: @pet.specie
     fill_in "Vaccines", with: @pet.vaccines
-    click_on "Create Pet"
+    click_on "Crea a tu Mascota"
 
     assert_text "Pet was successfully created"
     click_on "Back"

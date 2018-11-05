@@ -25,8 +25,8 @@ end
     user: User.order("RANDOM()").first,
     photo:[File.open("/home/emanuel/Desktop/gato.jpg"),File.open("/home/emanuel/Desktop/gato(3).jpg")],
     municipal_record: [true, false].sample,
-
     vaccines: [true, false].sample,
+    specie: [0].sample,
     name: Faker::Dog.name,
     breed: Faker::Dog.breed,
     age: Faker::Number.between(0, 6),
